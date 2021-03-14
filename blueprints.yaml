@@ -1,14 +1,15 @@
 name: Photoswipe
 slug: photoswipe
 type: plugin
-version: 0.1.0
+version: 1.0.0
 description: Add Photoswipe gallery to your pages
 icon: image
 author:
   name: Karmalakas
   email: cronus.raven@gmail.com
 homepage: https://github.com/Karmalakas/grav-plugin-photoswipe
-keywords: grav, plugin, etc
+demo: https://www.kacinskas.lt/en/photography/best-shots
+keywords: grav, plugin, gallery, photo, photoswipe, lightbox
 bugs: https://github.com/Karmalakas/grav-plugin-photoswipe/issues
 docs: https://github.com/Karmalakas/grav-plugin-photoswipe/blob/develop/README.md
 license: MIT
