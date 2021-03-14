@@ -1,0 +1,336 @@
+name: Photoswipe
+slug: photoswipe
+type: plugin
+version: 0.1.0
+description: Add Photoswipe gallery to your pages
+icon: image
+author:
+  name: Karmalakas
+  email: cronus.raven@gmail.com
+homepage: https://github.com/Karmalakas/grav-plugin-photoswipe
+keywords: grav, plugin, etc
+bugs: https://github.com/Karmalakas/grav-plugin-photoswipe/issues
+docs: https://github.com/Karmalakas/grav-plugin-photoswipe/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    built_in_photoswipe_assets:
+      type: toggle
+      label: PLUGIN_PHOTOSWIPE.USE_BUILT_IN_PHOTOSWIPE_ASSETS.LABEL
+      help: PLUGIN_PHOTOSWIPE.USE_BUILT_IN_PHOTOSWIPE_ASSETS.HELP
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    built_in_js:
+      type: toggle
+      label: PLUGIN_PHOTOSWIPE.USE_BUILT_IN_JS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    options_ui:
+      type: section
+      title: PLUGIN_PHOTOSWIPE.SECTION_UI
+      underline: true
+      fields:
+
+        options.closeEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CLOSE_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.captionEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CAPTION_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.fullscreenEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.FULL_SCREEN_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.zoomEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.ZOOM_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.shareEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.SHARE_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.counterEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.COUNTER_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.arrowEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.ARROW_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.preloaderEl:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.PRELOADER_EL.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.tapToClose:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.TAP_TO_CLOSE.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.TAP_TO_CLOSE.HELP
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.tapToToggleControls:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.TAP_TO_TOGGLE_CONTROLS.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.TAP_TO_TOGGLE_CONTROLS.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.clickToCloseNonZoomable:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CLICK_TO_CLOSE_NON_ZOOMABLE.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.CLICK_TO_CLOSE_NON_ZOOMABLE.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.indexIndicatorSep:
+          type: text
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.INDEX_INDICATOR_SEPARATOR.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.INDEX_INDICATOR_SEPARATOR.HELP
+          default: ' / '
+
+    options_core:
+      type: section
+      title: PLUGIN_PHOTOSWIPE.SECTION_CORE
+      underline: true
+      fields:
+
+        options.showHideOpacity:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.SHOW_HIDE_OPACITY.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.SHOW_HIDE_OPACITY.HELP
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.bgOpacity:
+          type: text
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.BG_OPACITY.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.BG_OPACITY.HELP
+          default: 1
+
+        options.spacing:
+          type: text
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.SPACING.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.SPACING.HELP
+          default: 0.12
+
+        options.allowPanToNext:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.ALLOW_PAN_TO_NEXT.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.ALLOW_PAN_TO_NEXT.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.maxSpreadZoom:
+          type: text
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.MAX_SPREAD_ZOOM.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.MAX_SPREAD_ZOOM.HELP
+          default: 2
+
+        options.loop:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.LOOP.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.LOOP.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.pinchToClose:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.PINCH_TO_CLOSE.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.PINCH_TO_CLOSE.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.closeOnScroll:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CLOSE_ON_SCROLL.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.CLOSE_ON_SCROLL.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.closeOnVerticalDrag:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CLOSE_ON_VERTICAL_DRAG.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.CLOSE_ON_VERTICAL_DRAG.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.escKey:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.ESC_KEY.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.arrowKeys:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.ARROW_KEYS.LABEL
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+        options.history:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.HISTORY.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.HISTORY.HELP
+          highlight: 1
+          default: 1
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+
+    options_advanced:
+      type: section
+      title: PLUGIN_PHOTOSWIPE.SECTION_ADVANCED
+      underline: true
+      fields:
+
+        options.centerThumbPosition:
+          type: toggle
+          label: PLUGIN_PHOTOSWIPE.OPTIONS.CENTER_THUMB_POSSITION.LABEL
+          help: PLUGIN_PHOTOSWIPE.OPTIONS.CENTER_THUMB_POSSITION.HELP
+          highlight: 1
+          default: 0
+          options:
+            1: PLUGIN_ADMIN.ENABLED
+            0: PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool

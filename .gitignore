@@ -1,0 +1,7 @@
+/.idea/
+node_modules/*
+!node_modules/photoswipe/
+node_modules/photoswipe/*
+!node_modules/photoswipe/dist/
+!/node_modules/photoswipe/LICENSE
+!/node_modules/photoswipe/README.md

@@ -1,0 +1,84 @@
+en:
+  PLUGIN_PHOTOSWIPE:
+    USE_BUILT_IN_PHOTOSWIPE_ASSETS:
+      LABEL: 'Use Photoswipe CSS and JS'
+      HELP: 'May want to disable if your theme includes custom Photoswipe styles and Javascript or you plan to include your own'
+    USE_BUILT_IN_JS: 'Use built in JS'
+
+    SECTION_UI: User interface
+    SECTION_CORE: Core features
+    SECTION_ADVANCED: Advanced
+
+    OPTIONS:
+      # UI
+      CLOSE_EL:
+        LABEL: Show close button
+      CAPTION_EL:
+        LABEL: Show caption
+      FULL_SCREEN_EL:
+        LABEL: Show full screen button
+      ZOOM_EL:
+        LABEL: Show zoom button
+      SHARE_EL:
+        LABEL: Show share menu
+      COUNTER_EL:
+        LABEL: Show counter
+      ARROW_EL:
+        LABEL: Show arrows
+      PRELOADER_EL:
+        LABEL: Show preloader
+      TAP_TO_CLOSE:
+        LABEL: Tap to close
+        HELP: Tap on sliding area should close gallery
+      TAP_TO_TOGGLE_CONTROLS:
+        LABEL: Tap to toggle controls
+        HELP: Tap should toggle visibility of controls
+      CLICK_TO_CLOSE_NON_ZOOMABLE:
+        LABEL: Tap to close small
+        HELP: Mouse click on image should close the gallery, only when image is smaller than size of the viewport
+      INDEX_INDICATOR_SEPARATOR:
+        LABEL: Counter separator
+        HELP: Separator for "1 of X" counter
+
+      # Core
+      SHOW_HIDE_OPACITY:
+        LABEL: 'Show/Hide opacity'
+        HELP: 'If set to `false`: background opacity and image scale will be animated (image opacity is always 1). If set to `true`: root PhotoSwipe element opacity and image scale will be animated.'
+      BG_OPACITY:
+        LABEL: Background opacity
+        HELP: 'Should be a number from 0 to 1, e.g. `0.7`'
+      SPACING:
+        LABEL: Spacing ratio between slides
+        HELP: 'For example, `0.12` will render as a 12% of sliding viewport width (rounded)'
+      ALLOW_PAN_TO_NEXT:
+        LABEL: Allow swipe on zoomed
+        HELP: 'Allow swipe navigation to next/prev item when current item is zoomed. Option is always `false` on devices that don''t have hardware touch support.'
+      MAX_SPREAD_ZOOM:
+        LABEL: Maximum zoom level when performing spread (zoom) gesture
+        HELP: '`2` means that image can be zoomed 2x from original size. Try to avoid huge values here, as too big image may cause memory issues on mobile (especially on iOS).'
+      LOOP:
+        LABEL: Loop slides
+        HELP: 'Loop slides when using swipe gesture. If set to `true` you''ll be able to swipe from last to first image. Option is always `false` when there are less than 3 slides.'
+      PINCH_TO_CLOSE:
+        LABEL: Pinch to close
+        HELP: Pinch to close gallery gesture. The gallery’s background will gradually fade out as the user zooms out. When the gesture is complete, the gallery will close.
+      CLOSE_ON_SCROLL:
+        LABEL: Close on scroll.
+        HELP: Close gallery on page scroll. Option works just for devices without hardware touch support.
+      CLOSE_ON_VERTICAL_DRAG:
+        LABEL: Close on vertical drag
+        HELP: 'Close gallery when dragging vertically and when image is not zoomed. Always `false` when mouse is used.'
+      ESC_KEY:
+        LABEL: '<kbd>esc</kbd> key to close'
+      ARROW_KEYS:
+        LABEL: Keyboard arrow keys navigation
+      HISTORY:
+        LABEL: History state
+        HELP: 'If set to `false` disables history module (back button to close gallery, unique URL for each slide).'
+
+      # Advanced
+      CENTER_THUMB_POSSITION:
+        LABEL: 'Center thumb position'
+        HELP: 'If before animation starts or after it ends you see thumbnail position not matching the image, or your thumbnail doesn''t match full image ratio, you might want to try this option. It vertically centers animated thumbnail according to image holder element.'
+
+    LOADING_ERROR: '[The image] could not be loaded' # Text wrapped in `[]` will become image link
