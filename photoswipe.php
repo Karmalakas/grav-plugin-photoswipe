@@ -3,10 +3,12 @@
 namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
+use Grav\Common\Grav;
 use Grav\Common\Page\Page;
 use Grav\Common\Plugin;
 use Grav\Common\Twig\Twig;
 use Grav\Plugin\Photoswipe\Twig\PhotoswipeExtension;
+use RocketTheme\Toolbox\Event\Event;
 
 /**
  * Class PhotoswipePlugin
@@ -51,6 +53,12 @@ class PhotoswipePlugin extends Plugin
     public function onPluginsInitialized(): void
     {
         if ($this->isAdmin()) {
+            $this->enable(
+                [
+                    'onGetPageTemplates'  => ['onGetPageTemplates', 0],
+                ]
+            );
+
             return;
         }
 
@@ -61,6 +69,15 @@ class PhotoswipePlugin extends Plugin
                 'onOutputGenerated'   => ['onOutputGenerated', 0],
             ]
         );
+    }
+
+    /**
+     * Add blueprint directory to page templates.
+     */
+    public function onGetPageTemplates(Event $event)
+    {
+        $locator = Grav::instance()['locator'];
+        $event->types->scanTemplates($locator->findResource('plugin://' . $this->name . '/templates'));
     }
 
     /**
