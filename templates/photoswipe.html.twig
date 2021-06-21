@@ -1,0 +1,17 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+    {{ parent() }}
+
+    {% set item_id = 'photoswipe-gallery-' ~ random() %}
+
+    {{ photoswipe(item_id, 'a') }}
+
+    <div id="{{ item_id }}">
+        {% for item in page.media.images %}
+            <a href="{{ item.url|e }}" class="gallery-item" data-size="{{ item.width ~ 'x' ~ item.height }}">
+                <img src="{{ item.cropResize(500, 250).url|e }}" alt=""/>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
