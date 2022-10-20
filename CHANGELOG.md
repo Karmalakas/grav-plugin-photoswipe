@@ -1,3 +1,9 @@
+# v1.2.0
+##  20-10-2022
+
+1. [](#new)
+   * Add CSS styles (fixes Y offset calculation)
+
 # v1.1.0
 ##  21-06-2021
 

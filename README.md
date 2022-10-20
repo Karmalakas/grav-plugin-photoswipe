@@ -11,6 +11,7 @@ Here is the default configuration of available options:
 ```yaml
 enabled: true
 built_in_photoswipe_assets: true
+built_in_css: true
 built_in_js: true
 options:
 

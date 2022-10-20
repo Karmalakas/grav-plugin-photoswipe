@@ -3,6 +3,7 @@ en:
     USE_BUILT_IN_PHOTOSWIPE_ASSETS:
       LABEL: 'Use Photoswipe CSS and JS'
       HELP: 'May want to disable if your theme includes custom Photoswipe styles and Javascript or you plan to include your own'
+    USE_BUILT_IN_CSS: 'Use built in CSS'
     USE_BUILT_IN_JS: 'Use built in JS'
 
     SECTION_UI: User interface

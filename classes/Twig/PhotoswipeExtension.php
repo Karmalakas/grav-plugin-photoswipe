@@ -104,6 +104,10 @@ class PhotoswipeExtension extends \Twig_Extension
             );
         }
 
+        if ($this->config->get('plugins.photoswipe.built_in_css')) {
+            $this->grav['assets']->addCss('plugin://photoswipe/assets/css/photoswipe.css');
+        }
+
         if ($this->config->get('plugins.photoswipe.built_in_js')) {
             $this->grav['assets']->addJs('plugin://photoswipe/assets/js/photoswipe.min.js');
         }
