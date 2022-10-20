@@ -1,0 +1,2 @@
+.gallery-item {display: inline-block;}
+.gallery-item > img {display: block;}
