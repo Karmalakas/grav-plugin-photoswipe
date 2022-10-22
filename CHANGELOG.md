@@ -1,3 +1,9 @@
+# v1.2.1
+##  22-10-2022
+
+1. [](#bugfix)
+   * Fix version check in GPM
+
 # v1.2.0
 ##  20-10-2022
 
