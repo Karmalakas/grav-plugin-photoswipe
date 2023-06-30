@@ -76,6 +76,12 @@ Every page can override config options. You can pass theme as a third parameter 
 {{ photoswipe('id', 'a', page.header.photoswipe.options) }}
 ```
 
+> If you use Photoswipe in a module template**, you must add this to the module's (not the main modular page) frontmatter: `never_cache_twig: true`. You don't need to do this if your site has caching disabled.
+>
+> If caching is enabled _and_ your Photoswipe gallery is invoked in a module template, all of the assets that make Photoswipe work are omitted from the cache. You will see the gallery unstyled and unscripted and lightbox will not work.
+>
+> [Issue #1: Assets not loading with twig cache enabled](https://github.com/Karmalakas/grav-plugin-photoswipe/issues/1) has more details.
+
 ## Installation
 
 Installing the Photoswipe plugin can be done in one of three ways: The GPM (Grav Package Manager) installation method lets you quickly install the plugin with a simple terminal command, the manual method lets you do so via a zip file, and the admin method lets you do so via the Admin Plugin.
