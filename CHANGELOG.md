@@ -1,3 +1,12 @@
+# v1.3.0
+## 22-11-2026
+
+1. [](#improved)
+   * Change when the Admin check happens when loading page templates
+2. [](#new)
+   * Mark plugin compatible with Grav 2.0
+   * Bump up the version
+
 # v1.2.1
 ##  22-10-2022
 
