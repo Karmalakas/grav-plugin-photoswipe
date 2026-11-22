@@ -52,21 +52,21 @@ class PhotoswipePlugin extends Plugin
      */
     public function onPluginsInitialized(): void
     {
-        if ($this->isAdmin()) {
-            $this->enable(
-                [
-                    'onGetPageTemplates'  => ['onGetPageTemplates', 0],
-                ]
-            );
+        $this->enable(
+            [
+                'onGetPageTemplates' => ['onGetPageTemplates', 0],
+            ]
+        );
 
+        if ($this->isAdmin()) {
             return;
         }
 
         $this->enable(
             [
                 'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-                'onTwigExtensions'    => ['onTwigExtensions', 0],
-                'onOutputGenerated'   => ['onOutputGenerated', 0],
+                'onTwigExtensions' => ['onTwigExtensions', 0],
+                'onOutputGenerated' => ['onOutputGenerated', 0],
             ]
         );
     }
@@ -108,7 +108,7 @@ class PhotoswipePlugin extends Plugin
         }
 
         /** @var Twig $twig */
-        $twig   = $this->grav->get('twig');
+        $twig = $this->grav->get('twig');
         $holder = $twig->processTemplate('partials/photoswipe/holder.html.twig');
 
         if (!$holder) {
@@ -140,14 +140,10 @@ class PhotoswipePlugin extends Plugin
             for ($i = $children->length - 1; $i >= 0; $i--) {
                 $child = $children->item($i);
 
-                if (!$child instanceof \DOMElement) {
-                    continue;
-                }
-
-                /** @var \DOMElement $child */
-                $node_name = $child->nodeName;
-
-                if ($node_name === 'script') {
+                if (
+                    !$child instanceof \DOMElement
+                    || $child->nodeName === 'script'
+                ) {
                     continue;
                 }
 
